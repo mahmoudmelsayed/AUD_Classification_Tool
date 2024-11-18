@@ -33,12 +33,12 @@ else:
     pre_cue_craving_score = st.slider("On a scale of 1-10, how much do you crave alcohol right now?", 1, 10, 1)
     
     # Ask coping questions and calculate total coping score
-    st.write("Rate the following statements on a scale of 1-4:")
-    q1 = st.radio("1. I drink to relax.", [1, 2, 3, 4])
-    q2 = st.radio("2. I drink to forget my worries.", [1, 2, 3, 4])
-    q3 = st.radio("3. I drink to feel more self-confident or sure of myself.", [1, 2, 3, 4])
-    q4 = st.radio("4. I drink because it helps when I feel depressed or nervous.", [1, 2, 3, 4])
-    q5 = st.radio("5. I drink to cheer up when I am in a bad mood.", [1, 2, 3, 4])
+    st.write("Rate the following statements on a scale of 0-4, where 0 = Almost never/Never; 1 = Some of the time; 2 = Half of the time; Most of the time; Almost always/Always:")
+    q1 = st.radio("1. I drink to relax.", [0, 1, 2, 3, 4])
+    q2 = st.radio("2. I drink to forget my worries.", [0, 1, 2, 3, 4])
+    q3 = st.radio("3. I drink to feel more self-confident or sure of myself.", [0, 1, 2, 3, 4])
+    q4 = st.radio("4. I drink because it helps when I feel depressed or nervous.", [0, 1, 2, 3, 4])
+    q5 = st.radio("5. I drink to cheer up when I am in a bad mood.", [0, 1, 2, 3, 4])
     coping_score = q1 + q2 + q3 + q4 + q5
     
     # Display the total coping score and craving score
