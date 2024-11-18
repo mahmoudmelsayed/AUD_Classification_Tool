@@ -39,15 +39,31 @@ else:
     # Ask craving question
     pre_cue_craving_score = st.slider("On a scale of 1-10, how much do you crave alcohol right now?", 1, 10, 1)
     
-    # Ask coping questions and calculate total coping score
-    st.write("Rate the following statements on a scale of 0-4, where 0 = Almost never/Never; 1 = Some of the time; 2 = Half of the time; Most of the time; Almost always/Always:")
-    q1 = st.radio("1. I drink to relax.", [0, 1, 2, 3, 4])
-    q2 = st.radio("2. I drink to forget my worries.", [0, 1, 2, 3, 4])
-    q3 = st.radio("3. I drink to feel more self-confident or sure of myself.", [0, 1, 2, 3, 4])
-    q4 = st.radio("4. I drink because it helps when I feel depressed or nervous.", [0, 1, 2, 3, 4])
-    q5 = st.radio("5. I drink to cheer up when I am in a bad mood.", [0, 1, 2, 3, 4])
-    coping_score = q1 + q2 + q3 + q4 + q5
-    
+    # Define the labels for the scale
+scale_labels = {
+    0: "Never",
+    1: "Almost never",
+    2:"Some of the time",
+    3: "Half of the time",
+    4: "Most of the time",
+    5: "Almost always/Always"
+}
+
+# Ask coping questions and calculate total coping score
+st.write("Rate the following statements on a scale of 0-4:")
+st.write("0 = Never, 1 = Almost never, 2 = Some of the time, 3 = Half of the time, 4 = Most of the time, 5 = Almost always/Always:")
+
+q1 = st.radio("1. I drink to relax.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
+q2 = st.radio("2. I drink to forget my worries.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
+q3 = st.radio("3. I drink to feel more self-confident or sure of myself.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
+q4 = st.radio("4. I drink because it helps when I feel depressed or nervous.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
+q5 = st.radio("5. I drink to cheer up when I am in a bad mood.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
+
+# Calculate the total coping score
+coping_score = q1 + q2 + q3 + q4 + q5
+
+# Display the total coping score
+st.write(f"Your total coping score is: **{coping_score}**")
     # Display the total coping score and craving score
     st.write(f"Your total coping score is: **{coping_score}**")
     st.write(f"Your craving score is: **{pre_cue_craving_score}**")
