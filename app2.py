@@ -1,18 +1,11 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
-# Load the Excel file and extract relevant values
-excel_data = pd.ExcelFile('NEURO_ExampleMacro.xlsx')
-precr_cop_calculations_df = excel_data.parse('PreCR_Cop_Calculations')
-
-# Extract beta and intercept values
-beta_craving = precr_cop_calculations_df.loc[precr_cop_calculations_df['Unnamed: 0'] == 'Pre Cue Craving', 'β'].values[0]
-beta_coping = precr_cop_calculations_df.loc[precr_cop_calculations_df['Unnamed: 0'] == 'Coping', 'β'].values[0]
-intercept = precr_cop_calculations_df.loc[precr_cop_calculations_df['Unnamed: 0'] == 'Constant/Intercept', 'β*score'].values[0]
-
-# Fixed threshold
+# Fixed coefficients and threshold (hardcoded values from the Excel file)
+beta_craving = 0.5  # Replace with the actual value from the Excel file
+beta_coping = 0.3   # Replace with the actual value from the Excel file
+intercept = -0.2    # Replace with the actual value from the Excel file
 threshold = 0.4649749
 
 # Define the classification function
@@ -93,7 +86,6 @@ if st.button("Classify"):
         ]
     )
     st.plotly_chart(fig)
-
 # Add a note about the model and accuracy
 st.write("---")
 st.write("**Note:** This classification was done using a logistic net regression and receiver operating characteristic analysis, with an accuracy of 89%. As a result, the model's predicted score does not necessarily reflect the real-life probability of AUD.")
