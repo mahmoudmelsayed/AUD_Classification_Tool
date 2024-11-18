@@ -50,8 +50,7 @@ else:
     }
 
     # Ask coping questions and calculate total coping score
-    st.write("Rate the following statements on a scale of 0-4:")
-    st.write("0 = Never, 1 = Almost never, 2 = Some of the time, 3 = Half of the time, 4 = Most of the time, 5 = Almost always/Always:")
+    st.write("Rate the following statements")
 
     q1 = st.radio("1. I drink to relax.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
     q2 = st.radio("2. I drink to forget my worries.", list(scale_labels.keys()), format_func=lambda x: scale_labels[x])
