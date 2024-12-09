@@ -41,12 +41,11 @@ else:
     
     # Define the labels for the scale
     scale_labels = {
-        0: "Never",
-        1: "Almost never",
-        2: "Some of the time",
-        3: "Half of the time",
-        4: "Most of the time",
-        5: "Almost always/Always"
+        0: "Never/Almost never",
+        1: "Some of the time",
+        2: "Half of the time",
+        3: "Most of the time",
+        4: "Almost always/Always"
     }
 
     # Ask coping questions and calculate total coping score
