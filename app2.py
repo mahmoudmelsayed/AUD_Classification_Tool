@@ -108,5 +108,5 @@ if st.button("Classify"):
 
 # Add a note about the model and accuracy
 st.write("---")
-st.write("**Note:** This classification was done using a logistic net regression and receiver operating characteristic analysis, with an accuracy of 89%. As a result, the model's predicted score does not necessarily reflect the real-life probability of AUD.")
+st.write("**Note:** This classification was done using a logistic net regression and receiver operating characteristic analysis, with an accuracy of 89%. As a result, the model's predicted score does not necessarily reflect the real-life probability of AUD. For more information refer to: <LINK to the PAPER>")
 
