@@ -121,5 +121,5 @@ if st.button("Classify"):
     st.plotly_chart(fig)
 
 st.write("---")
-st.write("**Note:** This classification was done using logistic net regression. Accuracy is 89%. For more information refer to: <LINK to the PAPER>")
+st.write("**Note:** This classification was done using binary logistic regression. Accuracy is 89%. For more information refer to: <LINK to the PAPER>")
 
