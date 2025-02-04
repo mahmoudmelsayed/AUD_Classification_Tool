@@ -61,8 +61,20 @@ for idx, image_path in enumerate(image_paths):
         st.warning(f"Image {idx+1} not found at {image_path}")
 
 # Ask craving question
-st.write("**Craving Question**")
-pre_cue_craving_score = st.slider("On a scale of 1-10, how much do you crave alcohol right now?", 1, 10, 1)
+st.write("**Craving Questions**")
+a = st.slider("a. On a scale of 1-10, How much do you want an alcoholic drink right now?", 1, 10, 1)
+b = st.slider("b. On a scale of 1-10, How much do you crave an alcoholic drink right now?", 1, 10, 1)
+c = st.slider("c. On a scale of 1-10, How much do you desire an alcoholic drink right now?", 1, 10, 1)
+d = st.slider("d. On a scale of 1-10, How high is your urge for an alcoholic drink right now?", 1, 10, 1)
+pre_cue_craving_score = (a + b + c + d)/4
+
+
+" [1= Minimum; 10= Maximum]"
+
+" [1= Minimum; 10= Maximum]"
+
+" [1= Minimum; 10= Maximum]
+
 
 # Define labels for coping questions
 scale_labels = {
