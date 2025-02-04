@@ -69,13 +69,6 @@ d = st.slider("d. On a scale of 1-10, How high is your urge for an alcoholic dri
 pre_cue_craving_score = (a + b + c + d)/4
 
 
-" [1= Minimum; 10= Maximum]"
-
-" [1= Minimum; 10= Maximum]"
-
-" [1= Minimum; 10= Maximum]
-
-
 # Define labels for coping questions
 scale_labels = {
     0: "Never/Almost never",
